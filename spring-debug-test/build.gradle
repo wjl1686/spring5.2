@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'org.springframework'
+version '5.2.16.BUILD-SNAPSHOT'
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile(project(':spring-context'))
+    optional('org.codehaus.groovy:groovy')
+    optional("com.fasterxml.jackson.core:jackson-databind")
+    optional("org.yaml:snakeyaml")
+    optional("org.aspectj:aspectjweaver")
+    implementation 'org.projectlombok:lombok:1.18.8'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
+}
+
+test {
+    useJUnitPlatform()
+}
